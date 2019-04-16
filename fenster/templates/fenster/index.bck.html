@@ -1,0 +1,57 @@
+<h1>Заголовок</h1>
+<table>
+	<tr>
+		<td></td>
+	</tr>
+</table>
+<input type="radio" name="var1name" id="var1id"/>
+<label for="var1id">Кликабельная трочка для кружочкас</label>
+<input type="checkbox" name="var2name" id="var2id">
+<label for="var2id">Кликабельная строчка для галочки</label>
+<select name="var3name"
+	<option value="55">Пятьдесят пять</select>
+</select>
+
+<table border="6px">
+    <tr height="{{window_height}}px" width={{window_width}}px>
+        <td colspan="2">
+            &nbsp;
+        </td>
+        <td colspan="6">
+            &nbsp;
+        </td>
+    </tr>
+    <tr height="{{window_height}}px" width="{{window_width}}px">
+        <td colspan="5">
+            &nbsp;
+        </td>
+        <td>
+             <input id="{{input_id}}"/>
+        </td>
+    </tr>
+    {% if countryside  %}
+        <tr height="50px">
+            <td colspan="2">
+                &nbsp
+            </td>
+        </tr>
+    {% endif %}
+    {% for countryside  in fenstertypes %}
+        <table border="6">
+        {% if countryside %}
+            <tr height="50px">
+                <td colspan="2">
+                    &nbsp;
+                </td>
+            </tr>
+        {% endif %}
+            <tr height="{{window_height}}px">
+                <td width="50px">
+                    &nbsp;
+                </td>
+                <td width="50px">
+                    &nbsp;
+                </td>
+            </tr>
+    {% endfor %}
+</table>
