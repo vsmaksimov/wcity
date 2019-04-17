@@ -1,0 +1,14 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Welcome!</h1>
+	<select>
+	{% for free_addr in free_addrs %}
+	    <option value="{{free_addr.coords}}">{{free_addr.address}}</option>
+	{% endfor %}
+	</select>
+	<input type="checkbox" id="checkbox_photo"/>
+	<label for="checkbox_photo">Only with photo</label>
+    </body>
+</html>
