@@ -5,6 +5,7 @@
         <h1 style="text-align: center">Welcome!</h1>
 	<h2>Here you can choose free apartament.</h2>
 	<select>
+	    <option selected disabled>Choose apartament</option>
 	{% for free_addr in free_addrs %}
 	    <option value="{{free_addr.coords}}">{{free_addr.address}}</option>
 	{% endfor %}
