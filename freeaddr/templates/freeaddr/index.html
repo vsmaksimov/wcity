@@ -7,10 +7,29 @@
 	<select>
 	    <option selected disabled>Choose apartament</option>
 	{% for free_addr in free_addrs %}
-	    <option value="{{free_addr.coords}}">{{free_addr.address}}</option>
+	    <option value="{{free_addr.latitude}}_{{freeaddr.longitude}}">{{free_addr.address}}</option>
 	{% endfor %}
 	</select>
 	<input type="checkbox" id="checkbox_photo"/>
 	<label for="checkbox_photo">Only with photo</label>
+        
+	<table border="2">
+           <thead>
+	       <tr>
+	           <td>ID</td>
+		   <td>Latitude</td>
+		   <td>Longitude</td>
+		   <td>Address</td>
+	       </tr>
+	   </thead>
+	{% for free_addr in free_addrs %}
+	    <tr>
+	    	<td>Free Address {{free_addr.id}}</td>
+		<td>{{free_addr.latitude}}</td>
+		<td>{{free_addr.longitude}}</td>
+		<td>{{free_addr.address}}</td>
+ 	    </tr>
+	{% endfor %}
+	</table>
     </body>
 </html>
