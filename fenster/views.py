@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
 
@@ -9,18 +10,20 @@ from .models import Fenster
 from random import randint
 
 def index(request):
-    # template = loader.get_template('fenster/index.bck.html')
-    test_creation()
+    # test_creation()
     fenster_list = Fenster.objects.order_by("id")
     context = {
-       #  "window_height": 100,
-       #  "window_width": fenster_list[0].fenster_width,
-       #  "fenstertypes": [True, False],
-       #  "how_many_fenster": len(fenster_list),
-        "fenster_list": fenster_list,
+        "request_place": str(request)
     }
-    # return HttpResponse(template.render(context))
-    return render(request, 'fenster/index.bck.html', context)
+
+    try:
+        if 'selected_fenster' in request.POST:
+            fenster_id = request.POST['selected_fenster']
+            return buy(request, fenster_id)
+        context["request_place"] += str(request.POST)
+    except Exception as e:
+        context["an_axception"] = str(e) + str(type(e))
+    return display_all(request, context)
 
 def test_creation():
 # Create a new fenster
@@ -30,3 +33,12 @@ def test_creation():
         window_view=''
     )
     f.save()
+
+def buy(request, fenster_id):
+    all_fensters = Fenster.objects
+    Fenster.objects.filter(id=fenster_id).delete()
+    return display_all(request)
+
+def display_all(request, context={}):
+    context["fenster_list"] = Fenster.objects.order_by("id")
+    return render(request, 'fenster/index.bck.html', context)    

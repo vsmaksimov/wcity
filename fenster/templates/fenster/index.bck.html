@@ -1,5 +1,6 @@
 <h1>Das Fenster</h1>
 
+<!--<a href="/admin/">Залогинимся?</a>
 <table name="table-fenster" border="2">
     {% for fenster in fenster_list %}
         <tr>
@@ -8,4 +9,47 @@
             <td style="text-align: center">{{ fenster.fenster_height }}</td>
         </tr>
     {% endfor %}
-</table>
+</table>-->
+<!--
+{%for countryside in fenstertypes %}
+    <table border="6">
+    {% if countryside %}
+        <tr height="50px">
+            <td colspan="2">
+                &nbsp;
+            </td>
+        </tr>
+    {% endif %}
+        <tr height="{{window_height}}px">
+            <td width="50px">
+                &nbsp;
+            </td>
+            <td width="50px">
+                &nbsp;
+            </td>
+        </tr>
+    </table>
+{% endfor %}-->
+
+<form action="{% url 'buy' %}" method="post">
+{% csrf_token  %}
+{% for afenster in fenster_list %}
+    <table border="6" width="300px">
+       <tr width="{{fenster.fenster_width}}" height="{{afenster.fenster_height}}px">
+           <td colspan="2">
+               <input
+                   type="radio"
+                   name="selected_fenster"
+                   id="fenster{{afenster.id}}"
+                   value="{{afenster.id}}"
+                   checked="checked"
+               />
+               <label for="fenster{{afenster.id}}">
+                   fenster №{{afenster.id}}
+               </label>
+           </td>
+       </tr>
+    </table>
+{% endfor %}
+<input type="submit" value="Buy"/>
+</form>
