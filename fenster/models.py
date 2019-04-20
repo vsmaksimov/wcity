@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import int_list_validator
+from decimal import Decimal
 
 # Create your models here
 
@@ -14,4 +15,19 @@ class Fenster(models.Model):
         validators=[int_list_validator],
         default='1,2',
         max_length=1024
+    )
+    fenster_price = models.DecimalField(
+        default=Decimal("0.00"),
+        max_digits=10,
+        decimal_places=2
+    )
+    for_sale = models.BooleanField(default=True)
+
+class Purchase(models.Model):
+    fenster_id = models.IntegerField()
+    date_time = models.DateTimeField()
+    price = models.DecimalField(
+        default=Decimal("0.00"),
+        max_digits=10,
+        decimal_places=2
     )

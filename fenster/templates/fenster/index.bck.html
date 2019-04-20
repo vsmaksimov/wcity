@@ -47,9 +47,15 @@
                <label for="fenster{{afenster.id}}">
                    fenster №{{afenster.id}}
                </label>
+	       <label>
+	           Price {{afenster.fenster_price}}
+	       </label>
            </td>
        </tr>
     </table>
 {% endfor %}
 <input type="submit" value="Buy"/>
+<label>Total Income: {{sum}}</label>
+{{pf_id}} {{pf_p}}
+{{type_f}}
 </form>

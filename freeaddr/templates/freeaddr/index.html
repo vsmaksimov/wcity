@@ -20,6 +20,7 @@
 		   <td>Latitude</td>
 		   <td>Longitude</td>
 		   <td>Address</td>
+		   <td>Price</td>
 	       </tr>
 	   </thead>
 	{% for free_addr in free_addrs %}
@@ -28,6 +29,7 @@
 		<td>{{free_addr.latitude}}</td>
 		<td>{{free_addr.longitude}}</td>
 		<td>{{free_addr.address}}</td>
+		<td>{{free_addr.price}}</td>
  	    </tr>
 	{% endfor %}
 	</table>

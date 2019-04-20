@@ -9,3 +9,8 @@ class FreeAddr(models.Model):
         default='',
         max_length=1024
     )
+    price = models.DecimalField(
+        default="0.00",
+        max_digits=10,
+        decimal_places=2,
+    )

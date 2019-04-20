@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from .models import FreeAddr
 from random import uniform
-
+from decimal import Decimal
 
 def index(request):
     # free_addrs_list = []
@@ -25,6 +25,7 @@ def test_creation():
     free_addr = FreeAddr(
         latitude=uniform(-90, 90),
         longitude=uniform(-180, 180),
-        address = "address"
+        address = "address",
+        price = Decimal(str(uniform(0, 5000)))
     )
     free_addr.save()

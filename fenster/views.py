@@ -7,10 +7,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 # from django.template import loader
 from django.shortcuts import render
 from .models import Fenster
-from random import randint
+from .models import Purchase
+from random import randint, uniform
+import datetime
+from decimal import Decimal
 
 def index(request):
-    # test_creation()
+    test_creation()
     fenster_list = Fenster.objects.order_by("id")
     context = {
         "request_place": str(request)
@@ -30,15 +33,33 @@ def test_creation():
     f = Fenster(
         fenster_width=randint(100, 256),
         fenster_height=randint(100, 256),
-        window_view=''
+        window_view='',
+        fenster_price = Decimal(uniform(0, 5000)),
+        for_sale = True
     )
     f.save()
 
 def buy(request, fenster_id):
     all_fensters = Fenster.objects
-    Fenster.objects.filter(id=fenster_id).delete()
-    return display_all(request)
+
+    purchased_fenster = (Fenster.objects.get(id=fenster_id))
+    purchased_fenster.for_sale = False
+    purchased_fenster.save()
+
+    purchase = Purchase(
+        fenster_id=fenster_id,
+        date_time=datetime.datetime.now(),
+        price=Decimal(purchased_fenster.fenster_price))
+    purchase.save()
+
+    return display_all(request, context)
 
 def display_all(request, context={}):
-    context["fenster_list"] = Fenster.objects.order_by("id")
+    context["fenster_list"] = Fenster.objects.filter(for_sale=True).order_by("id")
+    purchase_list = Purchase.objects.order_by("id")
+    sum = Decimal("0.00")
+    for purchase in purchase_list:
+        sum += purchase.price
+    context["sum"] = sum
+
     return render(request, 'fenster/index.bck.html', context)    
