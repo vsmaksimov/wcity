@@ -11,6 +11,8 @@ from .models import Purchase
 from random import randint, uniform
 import datetime
 from decimal import Decimal
+from random import randint
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     test_creation()
@@ -62,4 +64,17 @@ def display_all(request, context={}):
         sum += purchase.price
     context["sum"] = sum
 
-    return render(request, 'fenster/index.bck.html', context)    
+    return render(request, 'fenster/index.bck.html', context)   
+
+@login_required
+def sell(request):
+    if request.method == "POST":
+        f = Fenster(
+            fenster_width=request.POST['fenster_width'],
+            fenster_height=request.POST['fenster_height'],
+            fenster_scheme=request.POST['fenster_scheme'],
+            window_view='')
+        f.save()
+    #else:
+    return render(request, 'fenster/new.html')
+
