@@ -15,14 +15,15 @@ from random import randint
 from django.contrib.auth.decorators import login_required
 
 def index(request):
-    test_creation()
+    #test_creation()
     fenster_list = Fenster.objects.order_by("id")
     context = {
         "request_place": str(request)
     }
 
     try:
-        if 'selected_fenster' in request.POST:
+        # if 'selected_fenster' in request.POST:
+        if request.method == "POST":
             fenster_id = request.POST['selected_fenster']
             return buy(request, fenster_id)
         context["request_place"] += str(request.POST)
@@ -45,14 +46,15 @@ def buy(request, fenster_id):
     all_fensters = Fenster.objects
 
     purchased_fenster = (Fenster.objects.get(id=fenster_id))
-    purchased_fenster.for_sale = False
-    purchased_fenster.save()
+    if purchased_fenster.for_sale:
+        purchased_fenster.for_sale = False
+        purchased_fenster.save()
 
-    purchase = Purchase(
-        fenster_id=fenster_id,
-        date_time=datetime.datetime.now(),
-        price=Decimal(purchased_fenster.fenster_price))
-    purchase.save()
+        purchase = Purchase(
+            fenster_id=fenster_id,
+            date_time=datetime.datetime.now(),
+            price=Decimal(purchased_fenster.fenster_price))
+        purchase.save()
 
     return display_all(request, context)
 
