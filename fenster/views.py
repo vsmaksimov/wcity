@@ -3,8 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
 
-# from django.http import HttpResponse
-# from django.template import loader
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from .models import Fenster
 from .models import Purchase
@@ -13,6 +12,7 @@ import datetime
 from decimal import Decimal
 from random import randint
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 
 def index(request):
     #test_creation()
@@ -43,10 +43,11 @@ def test_creation():
     f.save()
 
 def buy(request, fenster_id):
-    all_fensters = Fenster.objects
+    try:
+        all_fensters = Fenster.objects
 
-    purchased_fenster = (Fenster.objects.get(id=fenster_id))
-    if purchased_fenster.for_sale:
+        purchased_fenster = (Fenster.objects.get(id=fenster_id))
+        # if purchased_fenster.for_sale:
         purchased_fenster.for_sale = False
         purchased_fenster.save()
 
@@ -55,11 +56,15 @@ def buy(request, fenster_id):
             date_time=datetime.datetime.now(),
             price=Decimal(purchased_fenster.fenster_price))
         purchase.save()
-
-    return display_all(request, context)
+    except Exception as e:
+        print("Error on server")
+    else:
+        return HttpResponseRedirect("")
+    # return display_all(request, context)
 
 def display_all(request, context={}):
-    context["fenster_list"] = Fenster.objects.filter(for_sale=True).order_by("id")
+    if "fenster_list" not in context:
+        context["fenster_list"] = Fenster.objects.filter(for_sale=True).order_by("id")
     purchase_list = Purchase.objects.order_by("id")
     sum = Decimal("0.00")
     for purchase in purchase_list:
@@ -80,3 +85,13 @@ def sell(request):
     #else:
     return render(request, 'fenster/new.html')
 
+def apply(request):
+    if request.method == "POST":
+        lower_price = Decimal(request.POST["lower_price"])
+        upper_price = Decimal(request.POST["upper_price"])
+        fenster_list = Fenster.objects.filter(fenster_price__gte=lower_price, fenster_price__lte=upper_price)
+        context = {"fenster_list": fenster_list}
+        # return display_all(request, context)
+        # return HttpResponseRedirect(reverse('', args=(context)))
+        return HttpResponseRedirect('../')
+    return display_all(request)

@@ -4,6 +4,10 @@ from decimal import Decimal
 
 # Create your models here
 
+class Apartament(models.Model):
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+
 class Fenster(models.Model):
     fenster_width = models.IntegerField()
     fenster_height = models.IntegerField(default=0)
@@ -22,6 +26,7 @@ class Fenster(models.Model):
         decimal_places=2
     )
     for_sale = models.BooleanField(default=True)
+    fenster_apartament = models.ManyToManyField(Apartament)
 
 class Purchase(models.Model):
     fenster_id = models.IntegerField()
