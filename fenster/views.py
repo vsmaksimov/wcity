@@ -22,7 +22,6 @@ def index(request):
     }
 
     try:
-        # if 'selected_fenster' in request.POST:
         if request.method == "POST":
             fenster_id = request.POST['selected_fenster']
             return buy(request, fenster_id)
@@ -47,7 +46,6 @@ def buy(request, fenster_id):
         all_fensters = Fenster.objects
 
         purchased_fenster = (Fenster.objects.get(id=fenster_id))
-        # if purchased_fenster.for_sale:
         purchased_fenster.for_sale = False
         purchased_fenster.save()
 
@@ -60,7 +58,6 @@ def buy(request, fenster_id):
         print("Error on server")
     else:
         return HttpResponseRedirect("")
-    # return display_all(request, context)
 
 def display_all(request, context={}):
     if "fenster_list" not in context:
@@ -90,7 +87,4 @@ def apply(request):
     upper_price = Decimal(request.GET.get("upper_price", "150.00"))
     fenster_list = Fenster.objects.filter(fenster_price__gte=lower_price, fenster_price__lte=upper_price)
     context = {"fenster_list": fenster_list}
-        # return display_all(request, context)
-        # return HttpResponseRedirect(reverse('', args=(context)))
-    # return HttpResponseRedirect('../')
     return display_all(request, context)
