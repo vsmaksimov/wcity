@@ -86,12 +86,11 @@ def sell(request):
     return render(request, 'fenster/new.html')
 
 def apply(request):
-    if request.method == "POST":
-        lower_price = Decimal(request.POST["lower_price"])
-        upper_price = Decimal(request.POST["upper_price"])
-        fenster_list = Fenster.objects.filter(fenster_price__gte=lower_price, fenster_price__lte=upper_price)
-        context = {"fenster_list": fenster_list}
+    lower_price = Decimal(request.GET.get("lower_price", "1.00"))
+    upper_price = Decimal(request.GET.get("upper_price", "150.00"))
+    fenster_list = Fenster.objects.filter(fenster_price__gte=lower_price, fenster_price__lte=upper_price)
+    context = {"fenster_list": fenster_list}
         # return display_all(request, context)
         # return HttpResponseRedirect(reverse('', args=(context)))
-        return HttpResponseRedirect('../')
-    return display_all(request)
+    # return HttpResponseRedirect('../')
+    return display_all(request, context)
