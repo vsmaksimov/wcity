@@ -18,14 +18,19 @@
 {% if fenster_list.count > 10 %}
     {% for i in 0|rjust:10 %}
     <table border="6" width="300px">
-        <tr>
-            <td>
-            </td>
-       </tr>
-    </table>
+       <tr width="{{fenster.fenster_width}}" height="{{afenster.fenster_height}}px">
+           <td colspan="2">
+           <td colspan="2">
     {% endfor %}
-{% endif %}
-{% for afenster in fenster_list %}
+{% else %}
+    {% for afenster in fenster_list %}
+    <table border="6" width="300px">
+       <tr width="{{fenster.fenster_width}}" height="{{afenster.fenster_height}}px">
+           <td colspan="2">
+               <input
+    {% endfor %}
+{% else %}
+    {% for afenster in fenster_list %}
     <table border="6" width="300px">
        <tr width="{{fenster.fenster_width}}" height="{{afenster.fenster_height}}px">
            <td colspan="2">
@@ -47,7 +52,8 @@
            </td>
        </tr>
     </table>
-{% endfor %}
+    {% endfor %}
+{% endif %}
 <input type="submit" value="Buy"/>
 <label>Total Income: {{sum}}</label>
 </form>

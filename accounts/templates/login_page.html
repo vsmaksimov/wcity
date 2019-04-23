@@ -1,0 +1,21 @@
+<form method="post" action="{ url 'login' }">
+{% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                Логин
+            </td>
+            <td>
+                {{}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Пароль:
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+<input type="submit" value="Войти"/>
+</form>

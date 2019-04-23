@@ -14,6 +14,7 @@ from random import randint
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 
+@login_required
 def index(request):
     #test_creation()
     fenster_list = Fenster.objects.order_by("id")
