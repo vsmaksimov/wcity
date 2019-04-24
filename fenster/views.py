@@ -14,6 +14,7 @@ from decimal import Decimal
 from random import randint
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from .pswds import gmail_pass
 
 
 @login_required
@@ -22,8 +23,7 @@ def index(request):
     fenster_list = Fenster.objects.order_by("id")
     context = {
         "request_place": str(request)
-    }
-
+        }
     try:
         if request.method == "POST":
             fenster_id = request.POST['selected_fenster']
@@ -64,7 +64,7 @@ def buy(request, fenster_id):
             from_email='sbdm472@gmail.com',
             recipient_list=['sbdm472@gmail.com'],
             auth_user="sbdm472@gmail.com",
-            auth_password="1ws4bc87"
+            auth_password=gmail_pass
         )
     except Exception as e:
         print("Error on server")
