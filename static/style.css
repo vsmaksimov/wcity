@@ -1,0 +1,25 @@
+body {
+    background-color: #480048;
+}
+
+table {
+    background-color: #cccccc;
+}
+
+#fenster_whole7 {
+    color: #ff0000;
+}
+
+
+input[type=submit] {
+    width: 100px;
+    height: 30px;
+    background-color: blue;
+    color: #ffffff;
+    border: none;
+}
+
+.fenster {
+    background-size: cover;
+    background-repeat: no-repeat;
+}

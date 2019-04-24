@@ -19,6 +19,7 @@ from django.urls import include
 from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
+    path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
     path('fenster/', include('fenster.urls')),
     path('freeaddr/', include('freeaddr.urls')),

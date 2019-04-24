@@ -1,5 +1,10 @@
 {% include 'fenster/base.html' %}
+
 <h1>Das Fenster</h1>
+
+{% load static %}
+
+
 <label>Вы зашли на сайт в {% now "Y-m-d H:i:s" %}</label>
 <form action="{% url 'apply' %}"  method="get">
 {% csrf_token %}
@@ -26,7 +31,7 @@
     {% endfor %}
 {% endif %}
 {% for afenster in fenster_list %}
-    <table border="6" width="300px">
+    <table id ="fenster_whole{{afenster.id}}" class="fenster" border="6" width="300px" style="background-image: url({% static 'view.jpg' %})">
        <tr width="{{fenster.fenster_width}}" height="{{afenster.fenster_height}}px">
            <td colspan="2">
                <input
@@ -39,6 +44,11 @@
                <label for="fenster{{afenster.id}}">
                    fenster №{{afenster.id}}
                </label>
+              <!-- <img
+                   src="{% static 'view.jpg'%}"
+                   alt="view"
+                   style="width: 100px"
+               />-->
 	       <label>
 	           Price {{afenster.fenster_price}}
 	       </label>

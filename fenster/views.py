@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -13,6 +14,7 @@ from decimal import Decimal
 from random import randint
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+
 
 @login_required
 def index(request):
@@ -55,6 +57,15 @@ def buy(request, fenster_id):
             date_time=datetime.datetime.now(),
             price=Decimal(purchased_fenster.fenster_price))
         purchase.save()
+
+        send_mail(
+            subject='Fenster was sold',
+            message='Fenster was sold.',
+            from_email='sbdm472@gmail.com',
+            recipient_list=['sbdm472@gmail.com'],
+            auth_user="sbdm472@gmail.com",
+            auth_password="1ws4bc87"
+        )
     except Exception as e:
         print("Error on server")
     else:
