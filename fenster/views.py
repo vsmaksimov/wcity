@@ -15,6 +15,9 @@ from random import randint
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from .pswds import gmail_pass
+import logging
+
+logger = logging.getLogger(__name__ + '.log')
 
 
 @login_required
@@ -57,7 +60,7 @@ def buy(request, fenster_id):
             date_time=datetime.datetime.now(),
             price=Decimal(purchased_fenster.fenster_price))
         purchase.save()
-
+        logger.info("Fenster was sold.")
         send_mail(
             subject='Fenster was sold',
             message='Fenster was sold.',

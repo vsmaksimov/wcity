@@ -1,0 +1,1646 @@
+F(0.001) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-04-25T17:57:20.527840+00:00'::timestamptz AND "django_session"."session_key" = 'qp9q8g8lswli9pbxhmdjokv3khduqorh'); args=(datetime.datetime(2019, 4, 25, 17, 57, 20, 527840, tzinfo=<UTC>), 'qp9q8g8lswli9pbxhmdjokv3khduqorh')
+(0.004) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.001) SELECT "fenster_purchase"."id", "fenster_purchase"."fenster_id", "fenster_purchase"."date_time", "fenster_purchase"."price" FROM "fenster_purchase" ORDER BY "fenster_purchase"."id" ASC; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "fenster_fenster" WHERE "fenster_fenster"."for_sale" = true; args=(True,)
+(0.000) SELECT "fenster_fenster"."id", "fenster_fenster"."fenster_width", "fenster_fenster"."fenster_height", "fenster_fenster"."window_view", "fenster_fenster"."fenster_scheme", "fenster_fenster"."fenster_price", "fenster_fenster"."for_sale" FROM "fenster_fenster" WHERE "fenster_fenster"."for_sale" = true ORDER BY "fenster_fenster"."id" ASC; args=(True,)
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 15, 'revcounter0': 14, 'first': True, 'last': False}, 'afenster': <Fenster: Fenster object (1)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 14, 'revcounter0': 13, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (2)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 13, 'revcounter0': 12, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (3)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 3, 'counter': 4, 'revcounter': 12, 'revcounter0': 11, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (4)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 4, 'counter': 5, 'revcounter': 11, 'revcounter0': 10, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (5)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 5, 'counter': 6, 'revcounter': 10, 'revcounter0': 9, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (6)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 6, 'counter': 7, 'revcounter': 9, 'revcounter0': 8, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (7)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 7, 'counter': 8, 'revcounter': 8, 'revcounter0': 7, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (8)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 8, 'counter': 9, 'revcounter': 7, 'revcounter0': 6, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (9)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 9, 'counter': 10, 'revcounter': 6, 'revcounter0': 5, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (10)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 10, 'counter': 11, 'revcounter': 5, 'revcounter0': 4, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (11)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 11, 'counter': 12, 'revcounter': 4, 'revcounter0': 3, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (12)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 12, 'counter': 13, 'revcounter': 3, 'revcounter0': 2, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (13)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 13, 'counter': 14, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (14)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lZUB84d8uFBc7HXgsuB04nbFR9zuXeHZ0YWs3gxHW0fFyBQ7BXcYYrwunRGGxqhk'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dd25f8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c00dba8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>, <Fenster: Fenster object (15)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 14, 'counter': 15, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'afenster': <Fenster: Fenster object (15)>}]
+"GET /fenster/ HTTP/1.1" 200 14107
+"GET /static/style.css HTTP/1.1" 304 0
+"GET /static/view.jpg HTTP/1.1" 304 0
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-04-25T17:58:01.743375+00:00'::timestamptz AND "django_session"."session_key" = 'qp9q8g8lswli9pbxhmdjokv3khduqorh'); args=(datetime.datetime(2019, 4, 25, 17, 58, 1, 743375, tzinfo=<UTC>), 'qp9q8g8lswli9pbxhmdjokv3khduqorh')
+(0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) SELECT "fenster_fenster"."id", "fenster_fenster"."fenster_width", "fenster_fenster"."fenster_height", "fenster_fenster"."window_view", "fenster_fenster"."fenster_scheme", "fenster_fenster"."fenster_price", "fenster_fenster"."for_sale" FROM "fenster_fenster" WHERE "fenster_fenster"."id" = 15; args=(15,)
+(0.000) UPDATE "fenster_fenster" SET "fenster_width" = 216, "fenster_height" = 126, "window_view" = '', "fenster_scheme" = '1,2', "fenster_price" = '0.00', "for_sale" = false WHERE "fenster_fenster"."id" = 15; args=(216, 126, '', '1,2', '0.00', False, 15)
+(0.000) INSERT INTO "fenster_purchase" ("fenster_id", "date_time", "price") VALUES (15, '2019-04-25T17:58:01.756061+00:00'::timestamptz, '0.00') RETURNING "fenster_purchase"."id"; args=(15, datetime.datetime(2019, 4, 25, 17, 58, 1, 756061, tzinfo=<UTC>), '0.00')
+"POST /fenster/ HTTP/1.1" 302 0
+(0.004) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-04-25T17:58:02.943262+00:00'::timestamptz AND "django_session"."session_key" = 'qp9q8g8lswli9pbxhmdjokv3khduqorh'); args=(datetime.datetime(2019, 4, 25, 17, 58, 2, 943262, tzinfo=<UTC>), 'qp9q8g8lswli9pbxhmdjokv3khduqorh')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.001) SELECT "fenster_purchase"."id", "fenster_purchase"."fenster_id", "fenster_purchase"."date_time", "fenster_purchase"."price" FROM "fenster_purchase" ORDER BY "fenster_purchase"."id" ASC; args=()
+(0.001) SELECT COUNT(*) AS "__count" FROM "fenster_fenster" WHERE "fenster_fenster"."for_sale" = true; args=(True,)
+(0.000) SELECT "fenster_fenster"."id", "fenster_fenster"."fenster_width", "fenster_fenster"."fenster_height", "fenster_fenster"."window_view", "fenster_fenster"."fenster_scheme", "fenster_fenster"."fenster_price", "fenster_fenster"."for_sale" FROM "fenster_fenster" WHERE "fenster_fenster"."for_sale" = true ORDER BY "fenster_fenster"."id" ASC; args=(True,)
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 14, 'revcounter0': 13, 'first': True, 'last': False}, 'afenster': <Fenster: Fenster object (1)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 13, 'revcounter0': 12, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (2)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 12, 'revcounter0': 11, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (3)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 3, 'counter': 4, 'revcounter': 11, 'revcounter0': 10, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (4)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 4, 'counter': 5, 'revcounter': 10, 'revcounter0': 9, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (5)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 5, 'counter': 6, 'revcounter': 9, 'revcounter0': 8, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (6)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 6, 'counter': 7, 'revcounter': 8, 'revcounter0': 7, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (7)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 7, 'counter': 8, 'revcounter': 7, 'revcounter0': 6, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (8)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 8, 'counter': 9, 'revcounter': 6, 'revcounter0': 5, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (9)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 9, 'counter': 10, 'revcounter': 5, 'revcounter0': 4, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (10)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 10, 'counter': 11, 'revcounter': 4, 'revcounter0': 3, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (11)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 11, 'counter': 12, 'revcounter': 3, 'revcounter0': 2, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (12)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 12, 'counter': 13, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (13)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Dn30YCcBliPzEsFStIzB1sK1OSthymKLim5RTOwaNDt25myJCbazVw5QkAAt8yk6'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7ff176dbdd30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7ff17c03ef28>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 13, 'counter': 14, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'afenster': <Fenster: Fenster object (14)>}]
+"GET /fenster/ HTTP/1.1" 200 13313
+(0.001) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-04-25T18:02:52.179871+00:00'::timestamptz AND "django_session"."session_key" = 'qp9q8g8lswli9pbxhmdjokv3khduqorh'); args=(datetime.datetime(2019, 4, 25, 18, 2, 52, 179871, tzinfo=<UTC>), 'qp9q8g8lswli9pbxhmdjokv3khduqorh')
+(0.004) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) SELECT "fenster_purchase"."id", "fenster_purchase"."fenster_id", "fenster_purchase"."date_time", "fenster_purchase"."price" FROM "fenster_purchase" ORDER BY "fenster_purchase"."id" ASC; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "fenster_fenster" WHERE "fenster_fenster"."for_sale" = true; args=(True,)
+(0.000) SELECT "fenster_fenster"."id", "fenster_fenster"."fenster_width", "fenster_fenster"."fenster_height", "fenster_fenster"."window_view", "fenster_fenster"."fenster_scheme", "fenster_fenster"."fenster_price", "fenster_fenster"."for_sale" FROM "fenster_fenster" WHERE "fenster_fenster"."for_sale" = true ORDER BY "fenster_fenster"."id" ASC; args=(True,)
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 14, 'revcounter0': 13, 'first': True, 'last': False}, 'afenster': <Fenster: Fenster object (1)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 13, 'revcounter0': 12, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (2)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 12, 'revcounter0': 11, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (3)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 3, 'counter': 4, 'revcounter': 11, 'revcounter0': 10, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (4)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 4, 'counter': 5, 'revcounter': 10, 'revcounter0': 9, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (5)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 5, 'counter': 6, 'revcounter': 9, 'revcounter0': 8, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (6)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 6, 'counter': 7, 'revcounter': 8, 'revcounter0': 7, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (7)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 7, 'counter': 8, 'revcounter': 7, 'revcounter0': 6, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (8)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 8, 'counter': 9, 'revcounter': 6, 'revcounter0': 5, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (9)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 9, 'counter': 10, 'revcounter': 5, 'revcounter0': 4, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (10)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 10, 'counter': 11, 'revcounter': 4, 'revcounter0': 3, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (11)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 11, 'counter': 12, 'revcounter': 3, 'revcounter0': 2, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (12)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 12, 'counter': 13, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (13)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'j8HHptjAKBbFO5T6bQhQOSV9q87RYnF6Y7JykFD9cWP8fZMXkjSOIWgYWQe3yzfr'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8d6dd8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10be48>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 13, 'counter': 14, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'afenster': <Fenster: Fenster object (14)>}]
+"GET /fenster/ HTTP/1.1" 200 13313
+"GET /static/style.css HTTP/1.1" 304 0
+"GET /static/view.jpg HTTP/1.1" 304 0
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-04-25T18:03:01.666470+00:00'::timestamptz AND "django_session"."session_key" = 'qp9q8g8lswli9pbxhmdjokv3khduqorh'); args=(datetime.datetime(2019, 4, 25, 18, 3, 1, 666470, tzinfo=<UTC>), 'qp9q8g8lswli9pbxhmdjokv3khduqorh')
+(0.005) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) SELECT "fenster_purchase"."id", "fenster_purchase"."fenster_id", "fenster_purchase"."date_time", "fenster_purchase"."price" FROM "fenster_purchase" ORDER BY "fenster_purchase"."id" ASC; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "fenster_fenster" WHERE "fenster_fenster"."for_sale" = true; args=(True,)
+(0.001) SELECT "fenster_fenster"."id", "fenster_fenster"."fenster_width", "fenster_fenster"."fenster_height", "fenster_fenster"."window_view", "fenster_fenster"."fenster_scheme", "fenster_fenster"."fenster_price", "fenster_fenster"."for_sale" FROM "fenster_fenster" WHERE "fenster_fenster"."for_sale" = true ORDER BY "fenster_fenster"."id" ASC; args=(True,)
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 14, 'revcounter0': 13, 'first': True, 'last': False}, 'afenster': <Fenster: Fenster object (1)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 13, 'revcounter0': 12, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (2)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 12, 'revcounter0': 11, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (3)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 3, 'counter': 4, 'revcounter': 11, 'revcounter0': 10, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (4)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 4, 'counter': 5, 'revcounter': 10, 'revcounter0': 9, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (5)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 5, 'counter': 6, 'revcounter': 9, 'revcounter0': 8, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (6)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 6, 'counter': 7, 'revcounter': 8, 'revcounter0': 7, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (7)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 7, 'counter': 8, 'revcounter': 7, 'revcounter0': 6, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (8)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 8, 'counter': 9, 'revcounter': 6, 'revcounter0': 5, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (9)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 9, 'counter': 10, 'revcounter': 5, 'revcounter0': 4, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (10)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 10, 'counter': 11, 'revcounter': 4, 'revcounter0': 3, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (11)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 11, 'counter': 12, 'revcounter': 3, 'revcounter0': 2, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (12)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 12, 'counter': 13, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'afenster': <Fenster: Fenster object (13)>}]
+Exception while resolving variable 'fenster' in template 'fenster/index.bck.html'.
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'fenster'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/student/anaconda3/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [fenster] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Kv3wYj7cevluKpqJtzEmu9r7R9NVzhbWpu5nTvrLGQZXbjjAC2fkodMWnRU79tLh'>, 'request': <WSGIRequest: GET '/fenster/'>, 'user': <SimpleLazyObject: <User: king>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4cac8dc748>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f4cae10b470>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'request_place': "<WSGIRequest: GET '/fenster/'><QueryDict: {}>", 'fenster_list': <QuerySet [<Fenster: Fenster object (1)>, <Fenster: Fenster object (2)>, <Fenster: Fenster object (3)>, <Fenster: Fenster object (4)>, <Fenster: Fenster object (5)>, <Fenster: Fenster object (6)>, <Fenster: Fenster object (7)>, <Fenster: Fenster object (8)>, <Fenster: Fenster object (9)>, <Fenster: Fenster object (10)>, <Fenster: Fenster object (11)>, <Fenster: Fenster object (12)>, <Fenster: Fenster object (13)>, <Fenster: Fenster object (14)>]>, 'sum': Decimal('0.00')}, {'forloop': {'parentloop': {}, 'counter0': 13, 'counter': 14, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'afenster': <Fenster: Fenster object (14)>}]
+"GET /fenster/ HTTP/1.1" 200 13313
