@@ -1,0 +1,33 @@
+ul {
+    margin: 150px 0 0 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+input {
+    display: block;
+    margin: auto;
+}
+
+input[type=text], input[type=password] {
+    width: 300px;
+    height: 55px;
+
+    font-size: 23px;
+    
+    border: solid 1px #ffffff;
+    border-radius: 7px;
+
+    padding: 5px 10px;;
+}
+
+input[type=submit] {
+    width: 150px;
+    height: 40px;
+
+    border-radius: 5px;
+}

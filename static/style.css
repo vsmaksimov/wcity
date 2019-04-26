@@ -1,10 +1,17 @@
-body {
+/*body {
     background-color: #480048;
+}*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("view_bg.jpg");
+    background-repeat: no-repeat;
 }
 
-table {
+/*table {
     background-color: #cccccc;
-}
+}*/
 
 #fenster_whole7 {
     color: #ff0000;
@@ -14,7 +21,7 @@ table {
 input[type=submit] {
     width: 100px;
     height: 30px;
-    background-color: blue;
+    background-color: #41aff4;
     color: #ffffff;
     border: none;
 }
@@ -23,3 +30,15 @@ input[type=submit] {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.div-form {
+    width: 45%;
+    height: 75%;
+
+    margin: auto;
+
+    background-color: #F5F5F5;
+
+    border-radius: 10px;
+}
+

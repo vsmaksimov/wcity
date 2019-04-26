@@ -1,63 +1,95 @@
 {% include 'fenster/base.html' %}
-
-<h1>Das Fenster</h1>
-
 {% load static %}
 
+<!--<h1>Das Fenster</h1>-->
+{% block content %}
+<div>
+    <input
+        type="button"
+        onClick="location.href='/accounts/logout/?next={{request.path}}'"
+	value="Logout"
+    />
+</div>
 
 <label>Вы зашли на сайт в {% now "Y-m-d H:i:s" %}</label>
-<form action="{% url 'apply' %}"  method="get">
-{% csrf_token %}
-    <label style="display: block">Ценовые категории</label>
-    <label>От</label>
-    <input type="number" name="lower_price" value="1"/>
-    <label>До</label>
-    <input type="number" name="upper_price" value="150"/>
-    <input type="submit" value="Применить"/>
-</form>
-<form action="{% url 'index_fenster' %}" method="get">
+
+<div class="div-form">
+    <form action="{% url 'apply' %}"  method="get">
+    {% csrf_token %}
+        <label style="display: block">Ценовые категории</label>
+        <label>От</label>
+        <input type="number" name="lower_price" value="1"/>
+        <label>До</label>
+        <input type="number" name="upper_price" value="150"/>
+        <input type="submit" value="Применить"/>
+    </form>
+    
+    <form action="{% url 'index_fenster' %}" method="get">
 	<input type="submit" value="Clear filter">
-</form>
-<form action="{% url 'buy' %}" method="post">
-{% csrf_token %}
-{% if fenster_list.count > 10 %}
-    {% for i in 0|rjust:10 %}
-    <table border="6" width="300px">
-        <tr>
-            <td>
-            </td>
-       </tr>
-    </table>
+    </form>
+    
+    <form action="{% url 'buy' %}" method="post">
+    {% csrf_token %}
+    
+    <!-- {% if fenster_list.count > 10 %}
+        {% for i in 0|rjust:10 %}
+        <table border="6" width="300px">
+            <tr>
+                <td>
+               </td>
+            </tr>
+        </table>
+        {% endfor %}
+    {% endif %}-->
+
+    <div style="height: 70%; overflow-y: auto; margin: 10px 0 10px 0">
+    {% for afenster in fenster_list %}
+    <div>
+       <div style="width: 230px; display: inline-block">
+       <input
+           type="radio"
+           name="selected_fenster"
+	   id="fenster{{afenster.id}}"
+           value="{{afenster.id}}"
+	   checked="checked"
+           style="display: inline-block; margin: auto 0"
+        />
+        <table id ="fenster_whole{{afenster.id}}" class="fenster" border="3" style="display: inline-block">
+           <tr>
+	       <td>
+                   <label for="fenster{{afenster.id}}">
+                       Fenster №: {{afenster.id}}
+                   </label>
+	       </td>
+	   </tr>
+	   <tr>
+	       <td>
+	           Price: {{afenster.fenster_price}}
+	       </td>
+	   </tr>
+	   <tr>
+	       <td>
+                   Width: {{afenster.fenster_width}}
+	       </td>
+	   </tr>
+	   <tr>
+	       <td>
+                   Height: {{afenster.fenster_height}}
+	       </td>
+           </tr>
+        </table>
+        </div>
+	<div style="display: inline-block">
+	    <img
+		src="{% static 'view.jpg'%}"
+                alt="view"
+		style="width: 600; height: 345px"
+            />
+        </div>
+    </div>
     {% endfor %}
-{% endif %}
-{% for afenster in fenster_list %}
-    <table id ="fenster_whole{{afenster.id}}" class="fenster" border="6" width="300px" style="background-image: url({% static 'view.jpg' %})">
-       <tr width="{{fenster.fenster_width}}" height="{{afenster.fenster_height}}px">
-           <td colspan="2">
-               <input
-                   type="radio"
-                   name="selected_fenster"
-                   id="fenster{{afenster.id}}"
-                   value="{{afenster.id}}"
-                   checked="checked"
-               />
-               <label for="fenster{{afenster.id}}">
-                   fenster №{{afenster.id}}
-               </label>
-              <!-- <img
-                   src="{% static 'view.jpg'%}"
-                   alt="view"
-                   style="width: 100px"
-               />-->
-	       <label>
-	           Price {{afenster.fenster_price}}
-	       </label>
-               {{afenster.fenster_width}}
-               {{afenster.fenster_height}}
-           </td>
-       </tr>
-    </table>
-{% endfor %}
-<input type="submit" value="Buy"/>
-<label>Total Income: {{sum}}</label>
+    </div>
+    <input type="submit" value="Buy"/>
+    <label>Total Income: {{sum}}</label>
 </form>
+{% endblock %}

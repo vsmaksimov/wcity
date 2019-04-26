@@ -1,27 +1,44 @@
-<form method="post" action="{% url 'login' %}">
+{% include 'fenster/base.html' %}
+{% load static  %}
+<link rel="stylesheet" href="{% static 'login_page_style.css' %}"/>
+
+{% block content %}
+<div>
+<form method="post" action="{% url 'login' %}" class="selection_form">
 {% csrf_token %}
-    <table>
+    <!--<table>
         <tr>
             <td>
                 Логин:
-            </td>
+	    </td>
             <td>
                 {{ form.username}}
             </td>
         </tr>
         <tr>
-            <td>
+           <td>
                 Пароль:
-            </td>
+	   </td>
             <td>
                 {{ form.password }}
             </td>
         </tr>
-    </table>
-<input type="submit" value="Войти"/>
-<input
-    type="hidden"
-    name="next"
-    value="{{next}}"
-/>
+    </table>-->
+    <ul>
+        <li>
+	    {{ form.username }}
+	</li>
+	<li>
+	    {{ form.password }}
+	</li>
+	<li>
+            <input type="submit" value="Войти"/>
+            <input
+                type="hidden"
+                name="next"
+                value="{{next}}"
+            />
+	</li>
 </form>
+</div>
+{% endblock %}

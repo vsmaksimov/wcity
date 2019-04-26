@@ -60,7 +60,7 @@ def buy(request, fenster_id):
             date_time=datetime.datetime.now(),
             price=Decimal(purchased_fenster.fenster_price))
         purchase.save()
-        logger.info("Fenster was sold.")
+        # logger.info("Fenster was sold.")
         send_mail(
             subject='Fenster was sold',
             message='Fenster was sold.',

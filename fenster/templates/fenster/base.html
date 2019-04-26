@@ -1,9 +1,19 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'style.css'%}"/>
-<div>
-    <input
-        type="button"
-        onClick="location.href='/accounts/logout/?next={{request.path}}'"
-        value="Logout"
-    />
+<link rel="stylesheet" href="{% static 'style.css' %}"/>
+<link rel="stylesheet" href="{% static 'header_style.css' %}"/>
+
+<div class="div_header">
+    <h1 class="header">Fenster Selection Service</h1>
 </div>
+
+{% block left_sidebar %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block right_sidebar %}
+{% endblock %}
+
+{% block footer  %}
+{% endblock %}
